@@ -1,24 +1,31 @@
 # Timestamp Python
 
-A Python library and CLI tool for working with timestamps and date/time conversions.
+[![PyPI Version](https://img.shields.io/pypi/v/timestamp-python?style=flat-square)](https://pypi.org/project/timestamp-python/)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/timestamp-python?style=flat-square)](https://pypi.org/project/timestamp-python/)
+[![License](https://img.shields.io/pypi/l/timestamp-python?style=flat-square)](LICENSE)
+[![Python Version](https://img.shields.io/pypi/pyversions/timestamp-python?style=flat-square)](https://pypi.org/project/timestamp-python/)
+[![GitHub Stars](https://img.shields.io/github/stars/mizoz/timestamp-python?style=flat-square)](https://github.com/mizoz/timestamp-python)
+
+> A Python CLI tool for working with timestamps and date/time conversions.
 
 ## Features
 
 - Convert timestamps to human-readable dates
 - Convert dates to timestamps
-- Multiple format support (ISO, Unix, custom)
-- Current timestamp display
+- Get current timestamp
+- Multiple format support
 - Timezone conversions
-- Relative time calculations
 - Python API for integration
 
 ## Installation
+
+### From PyPI
 
 ```bash
 pip install timestamp-python
 ```
 
-Or clone and install:
+### From Source
 
 ```bash
 git clone https://github.com/mizoz/timestamp-python.git
@@ -35,53 +42,48 @@ pip install -e .
 timestamp now
 
 # Convert timestamp to date
-timestamp convert 1699900000
+timestamp to-date 1704067200
 
 # Convert date to timestamp
-timestamp convert "2024-01-01"
+timestamp to-timestamp "2024-01-01"
 
-# Unix timestamp to date
-timestamp unix 1699900000
-
-# Relative time
-timestamp relative "2024-01-01"
+# Format output
+timestamp now --format iso
 ```
 
 ### Python API
 
 ```python
-from timestamp import Timestamp
+from timestamp_tool import TimestampTool
 
-ts = Timestamp()
+tool = TimestampTool()
 
 # Get current timestamp
-now = ts.now()
+now = tool.now()
 print(now)
 
-# Convert timestamp to date
-date = ts.from_timestamp(1699900000)
+# Convert to date
+date = tool.to_date(1704067200)
 print(date)
-
-# Convert date to timestamp
-ts_value = ts.to_timestamp("2024-01-01")
-print(ts_value)
-
-# Relative time
-relative = ts.relative("2024-01-01")
-print(relative)
 ```
 
-## Options
+## Requirements
 
-- `now` - Get current timestamp
-- `convert <value>` - Convert between formats
-- `unix <timestamp>` - Convert Unix timestamp
-- `relative <date>` - Show relative time
+- Python 3.7+
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-MIT License
+This project is licensed under the MIT License.
 
 ## Author
 
-mizoz
+**mizoz**
+- GitHub: [@mizoz](https://github.com/mizoz)
+
+---
+
+⭐ If you find this project useful, please consider giving it a star on GitHub!
